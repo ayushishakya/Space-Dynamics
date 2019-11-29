@@ -16,9 +16,12 @@ deg = pi/180
 
 def coe_from_sv(R, V, mu):
 
+    print(R,V)
     r = sci.linalg.norm(R)
     v = sci.linalg.norm(V)
     vr = sci.dot(R,V)/r
+
+    #print(r, v, vr)
 
     #angular momentum
     H = sci.cross(R,V)
@@ -66,8 +69,9 @@ def coe_from_sv(R, V, mu):
 
     a = h**2/mu/(1 - e**2)
     coe = sci.array([h, e, RA, incl, w, TA, a], dtype="float64")
+    print(coe)
     return coe
-
+'''
 if __name__=="__main__":
     mu = 398600
     r = sci.array([-6045 ,-3490, 2500], dtype="float")
@@ -89,3 +93,4 @@ if __name__=="__main__":
         print("\n Minutes =", T/60)
         print("\n Hours =", T/3600)
         print("\n Days =", T/24/3600)
+'''

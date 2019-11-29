@@ -5,6 +5,7 @@ Created on Sat Nov  9 04:44:44 2019
 
 @author: ayushi
 """
+
 import coe_from_sv
 import jdcal
 import de421
@@ -18,7 +19,6 @@ def planet_elements_and_sv(planet_id, year, month, day, hour, minute, second):
     #calculating julian time
     j0 = sum(jdcal.gcal2jd(year, month, day))
     ut = (hour+minute/60+second/3600)/24
-
     jd = j0+ut
 
     #determining state vectors
@@ -35,6 +35,7 @@ def planet_elements_and_sv(planet_id, year, month, day, hour, minute, second):
         moonvector = eph.position_and_velocity('moon', jd)
         r = barycenter[0] - eph.moon_share*moonvector[0]
         v = barycenter[1] - eph.moon_share*moonvector[1]
+        mu = 3.986e14
 
     else:
         r, v = eph.position_and_velocity(planet, jd)

@@ -11,5 +11,5 @@ def month_name(month_id):
     return months[month_id]
 
 def planet_name(planet_id):
-    planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"]
+    planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune", "moon"]
     return planets[planet_id]

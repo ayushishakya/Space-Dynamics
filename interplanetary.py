@@ -17,6 +17,7 @@ deg = pi/180
 
 def interplanetary(depart, arrive):
 
+    #DEPART
     planet_id = depart[0]
     year = depart[1]
     month = depart[2]
@@ -26,6 +27,8 @@ def interplanetary(depart, arrive):
     second = depart[6]
 
     [coe1, Rp1, Vp1, jd1] = planet_elements_and_sv.planet_elements_and_sv(planet_id, year, month, day, hour, minute, second)
+
+    #ARRIVE
     planet_id = arrive[0]
     year = arrive[1]
     month = arrive[2]
@@ -89,7 +92,7 @@ if __name__=="__main__":
     vinf1 = V1 - Vp1
     vinf2 = V2 - Vp2
 
-
+'''
     print("\n\n Departure:\n")
     print("\n Planet: ", month_planet_names.planet_name(depart[0]))
     print("\n Year : ", depart[1])
@@ -137,3 +140,4 @@ if __name__=="__main__":
 
     if coe[1] < 1:
         print("\n Period (days) = ", 2*pi/math.sqrt(mu)*coe[6]**1.5/24/3600)
+'''
